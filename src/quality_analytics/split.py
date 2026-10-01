@@ -54,3 +54,21 @@ def load_or_create_split(dataset: TrainingDataset, path: Path) -> dict[str, str]
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(expected, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return expected["membership"]
+
+
+def load_persisted_split(dataset: TrainingDataset, path: Path) -> dict[str, str]:
+    """Read existing membership without generating or writing assignments."""
+    saved = json.loads(path.read_text(encoding="utf-8"))
+    expected = {
+        "schema_version": 1, "dataset_version": dataset.dataset_version,
+        "dataset_fingerprint": dataset.fingerprint, "random_state": RANDOM_STATE,
+        "fractions": {"train": 0.6, "validation": 0.2, "test": 0.2},
+    }
+    if any(saved.get(key) != value for key, value in expected.items()):
+        raise ValueError("Persisted split identity or configuration does not match")
+    membership = saved.get("membership", {})
+    if set(membership) != set(dataset.sample_ids) or set(membership.values()) != set(SPLIT_NAMES):
+        raise ValueError("Persisted split must assign every sample to one valid split")
+    if saved.get("counts") != split_summary(dataset, membership):
+        raise ValueError("Persisted split counts do not match the dataset")
+    return membership

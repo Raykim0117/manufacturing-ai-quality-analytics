@@ -29,14 +29,19 @@ THRESHOLD = 0.5
 MODEL_VERSION = "logistic-regression-v1"
 
 
-def evaluate_validation(labels: np.ndarray, scores: np.ndarray) -> dict:
+def evaluate_validation(
+    labels: np.ndarray,
+    scores: np.ndarray,
+    threshold: float = THRESHOLD,
+    threshold_optimized: bool = False,
+) -> dict:
     """Failure is positive; PR-AUC uses trapezoids, not average precision."""
     precision, recall, _ = precision_recall_curve(labels, scores, pos_label=1)
-    predicted = (scores >= THRESHOLD).astype(int)
+    predicted = (scores >= threshold).astype(int)
     return {
         "evaluation_split": "validation",
-        "threshold": THRESHOLD,
-        "threshold_optimized": False,
+        "threshold": threshold,
+        "threshold_optimized": threshold_optimized,
         "positive_class": "manufacturing failure (1)",
         "pr_auc": float(auc(recall, precision)),
         "pr_auc_definition": "precision_recall_curve + trapezoidal auc(recall, precision)",
