@@ -3,3 +3,5 @@ google-cloud-bigquery==3.45.2
 numpy==1.26.4
 scikit-learn==1.5.2
 xgboost==2.1.4
+shap==0.46.0
+matplotlib==3.9.4

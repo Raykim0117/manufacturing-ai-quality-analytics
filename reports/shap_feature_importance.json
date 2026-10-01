@@ -1,0 +1,3009 @@
+{
+  "dataset_version": "secom-01b3bed261fc1223",
+  "model_version": "selected-model-v1",
+  "selected_model": "xgboost_candidate_1",
+  "threshold": 0.08485201001167297,
+  "selected_bundle_sha256": "66e00f2be70812c15c3d94dba81ce62116f8df3089d548dd4f5fa01a64559d8c",
+  "split_membership_sha256": "ec7600aa4978af4f58c0c3f48f4a31e44e90d8275ba74364b7d56e6bc775e678",
+  "explainer": "TreeExplainer",
+  "feature_perturbation": "interventional",
+  "model_output": "raw",
+  "units": "failure log-odds (raw XGBoost margin)",
+  "analysis_split": "validation",
+  "background_split": "train",
+  "random_state": 42,
+  "explained_sample_count": 100,
+  "background_sample_count": 64,
+  "test_evaluated": false,
+  "interpretation": "SHAP explains model associations, not causal effects or physical root causes. Anonymized SECOM feature IDs prevent physical process interpretation. Process-engineer review would be required before operational action.",
+  "feature_names": [
+    "feature_000",
+    "feature_001",
+    "feature_002",
+    "feature_003",
+    "feature_004",
+    "feature_006",
+    "feature_007",
+    "feature_008",
+    "feature_009",
+    "feature_010",
+    "feature_011",
+    "feature_012",
+    "feature_014",
+    "feature_015",
+    "feature_016",
+    "feature_017",
+    "feature_018",
+    "feature_019",
+    "feature_020",
+    "feature_021",
+    "feature_022",
+    "feature_023",
+    "feature_024",
+    "feature_025",
+    "feature_026",
+    "feature_027",
+    "feature_028",
+    "feature_029",
+    "feature_030",
+    "feature_031",
+    "feature_032",
+    "feature_033",
+    "feature_034",
+    "feature_035",
+    "feature_036",
+    "feature_037",
+    "feature_038",
+    "feature_039",
+    "feature_040",
+    "feature_041",
+    "feature_043",
+    "feature_044",
+    "feature_045",
+    "feature_046",
+    "feature_047",
+    "feature_048",
+    "feature_050",
+    "feature_051",
+    "feature_053",
+    "feature_054",
+    "feature_055",
+    "feature_056",
+    "feature_057",
+    "feature_058",
+    "feature_059",
+    "feature_060",
+    "feature_061",
+    "feature_062",
+    "feature_063",
+    "feature_064",
+    "feature_065",
+    "feature_066",
+    "feature_067",
+    "feature_068",
+    "feature_070",
+    "feature_071",
+    "feature_072",
+    "feature_073",
+    "feature_074",
+    "feature_075",
+    "feature_076",
+    "feature_077",
+    "feature_078",
+    "feature_079",
+    "feature_080",
+    "feature_081",
+    "feature_082",
+    "feature_083",
+    "feature_084",
+    "feature_086",
+    "feature_087",
+    "feature_088",
+    "feature_089",
+    "feature_090",
+    "feature_091",
+    "feature_092",
+    "feature_093",
+    "feature_094",
+    "feature_095",
+    "feature_096",
+    "feature_098",
+    "feature_099",
+    "feature_100",
+    "feature_101",
+    "feature_102",
+    "feature_103",
+    "feature_104",
+    "feature_105",
+    "feature_106",
+    "feature_107",
+    "feature_108",
+    "feature_112",
+    "feature_113",
+    "feature_114",
+    "feature_115",
+    "feature_116",
+    "feature_117",
+    "feature_118",
+    "feature_119",
+    "feature_120",
+    "feature_121",
+    "feature_122",
+    "feature_123",
+    "feature_124",
+    "feature_125",
+    "feature_126",
+    "feature_127",
+    "feature_128",
+    "feature_129",
+    "feature_130",
+    "feature_131",
+    "feature_132",
+    "feature_133",
+    "feature_134",
+    "feature_135",
+    "feature_136",
+    "feature_137",
+    "feature_138",
+    "feature_139",
+    "feature_140",
+    "feature_142",
+    "feature_143",
+    "feature_144",
+    "feature_145",
+    "feature_146",
+    "feature_147",
+    "feature_148",
+    "feature_150",
+    "feature_151",
+    "feature_152",
+    "feature_153",
+    "feature_154",
+    "feature_155",
+    "feature_156",
+    "feature_159",
+    "feature_160",
+    "feature_161",
+    "feature_162",
+    "feature_163",
+    "feature_164",
+    "feature_165",
+    "feature_166",
+    "feature_167",
+    "feature_168",
+    "feature_169",
+    "feature_170",
+    "feature_171",
+    "feature_172",
+    "feature_173",
+    "feature_174",
+    "feature_175",
+    "feature_176",
+    "feature_177",
+    "feature_180",
+    "feature_181",
+    "feature_182",
+    "feature_183",
+    "feature_184",
+    "feature_185",
+    "feature_187",
+    "feature_188",
+    "feature_195",
+    "feature_196",
+    "feature_197",
+    "feature_198",
+    "feature_199",
+    "feature_200",
+    "feature_201",
+    "feature_202",
+    "feature_203",
+    "feature_204",
+    "feature_205",
+    "feature_206",
+    "feature_207",
+    "feature_208",
+    "feature_209",
+    "feature_210",
+    "feature_211",
+    "feature_212",
+    "feature_213",
+    "feature_214",
+    "feature_215",
+    "feature_216",
+    "feature_217",
+    "feature_218",
+    "feature_219",
+    "feature_221",
+    "feature_222",
+    "feature_223",
+    "feature_224",
+    "feature_225",
+    "feature_227",
+    "feature_228",
+    "feature_238",
+    "feature_239",
+    "feature_247",
+    "feature_248",
+    "feature_249",
+    "feature_250",
+    "feature_251",
+    "feature_252",
+    "feature_253",
+    "feature_254",
+    "feature_255",
+    "feature_267",
+    "feature_268",
+    "feature_269",
+    "feature_270",
+    "feature_271",
+    "feature_272",
+    "feature_273",
+    "feature_274",
+    "feature_275",
+    "feature_277",
+    "feature_278",
+    "feature_279",
+    "feature_280",
+    "feature_281",
+    "feature_282",
+    "feature_283",
+    "feature_285",
+    "feature_286",
+    "feature_287",
+    "feature_288",
+    "feature_289",
+    "feature_290",
+    "feature_291",
+    "feature_294",
+    "feature_295",
+    "feature_296",
+    "feature_297",
+    "feature_298",
+    "feature_299",
+    "feature_300",
+    "feature_301",
+    "feature_302",
+    "feature_303",
+    "feature_304",
+    "feature_305",
+    "feature_306",
+    "feature_307",
+    "feature_308",
+    "feature_309",
+    "feature_310",
+    "feature_311",
+    "feature_312",
+    "feature_316",
+    "feature_317",
+    "feature_318",
+    "feature_319",
+    "feature_320",
+    "feature_321",
+    "feature_323",
+    "feature_324",
+    "feature_331",
+    "feature_332",
+    "feature_333",
+    "feature_334",
+    "feature_335",
+    "feature_336",
+    "feature_337",
+    "feature_338",
+    "feature_339",
+    "feature_340",
+    "feature_341",
+    "feature_342",
+    "feature_343",
+    "feature_344",
+    "feature_345",
+    "feature_346",
+    "feature_347",
+    "feature_348",
+    "feature_349",
+    "feature_350",
+    "feature_351",
+    "feature_352",
+    "feature_353",
+    "feature_354",
+    "feature_355",
+    "feature_356",
+    "feature_357",
+    "feature_359",
+    "feature_360",
+    "feature_361",
+    "feature_362",
+    "feature_363",
+    "feature_365",
+    "feature_366",
+    "feature_367",
+    "feature_368",
+    "feature_376",
+    "feature_377",
+    "feature_385",
+    "feature_386",
+    "feature_387",
+    "feature_388",
+    "feature_389",
+    "feature_390",
+    "feature_391",
+    "feature_392",
+    "feature_393",
+    "feature_405",
+    "feature_406",
+    "feature_407",
+    "feature_408",
+    "feature_409",
+    "feature_410",
+    "feature_411",
+    "feature_412",
+    "feature_413",
+    "feature_415",
+    "feature_416",
+    "feature_417",
+    "feature_418",
+    "feature_419",
+    "feature_420",
+    "feature_421",
+    "feature_423",
+    "feature_424",
+    "feature_425",
+    "feature_426",
+    "feature_427",
+    "feature_428",
+    "feature_429",
+    "feature_430",
+    "feature_431",
+    "feature_432",
+    "feature_433",
+    "feature_434",
+    "feature_435",
+    "feature_436",
+    "feature_437",
+    "feature_438",
+    "feature_439",
+    "feature_440",
+    "feature_441",
+    "feature_442",
+    "feature_443",
+    "feature_444",
+    "feature_445",
+    "feature_446",
+    "feature_447",
+    "feature_448",
+    "feature_452",
+    "feature_453",
+    "feature_454",
+    "feature_455",
+    "feature_456",
+    "feature_457",
+    "feature_459",
+    "feature_460",
+    "feature_467",
+    "feature_468",
+    "feature_469",
+    "feature_470",
+    "feature_471",
+    "feature_472",
+    "feature_473",
+    "feature_474",
+    "feature_475",
+    "feature_476",
+    "feature_477",
+    "feature_478",
+    "feature_479",
+    "feature_480",
+    "feature_482",
+    "feature_483",
+    "feature_484",
+    "feature_485",
+    "feature_486",
+    "feature_487",
+    "feature_488",
+    "feature_489",
+    "feature_490",
+    "feature_491",
+    "feature_493",
+    "feature_494",
+    "feature_495",
+    "feature_496",
+    "feature_497",
+    "feature_499",
+    "feature_500",
+    "feature_510",
+    "feature_511",
+    "feature_519",
+    "feature_520",
+    "feature_521",
+    "feature_522",
+    "feature_523",
+    "feature_524",
+    "feature_525",
+    "feature_526",
+    "feature_527",
+    "feature_539",
+    "feature_540",
+    "feature_541",
+    "feature_542",
+    "feature_543",
+    "feature_544",
+    "feature_545",
+    "feature_546",
+    "feature_547",
+    "feature_548",
+    "feature_549",
+    "feature_550",
+    "feature_551",
+    "feature_552",
+    "feature_553",
+    "feature_554",
+    "feature_555",
+    "feature_556",
+    "feature_557",
+    "feature_558",
+    "feature_559",
+    "feature_560",
+    "feature_561",
+    "feature_562",
+    "feature_563",
+    "feature_564",
+    "feature_565",
+    "feature_566",
+    "feature_567",
+    "feature_568",
+    "feature_569",
+    "feature_570",
+    "feature_571",
+    "feature_572",
+    "feature_573",
+    "feature_574",
+    "feature_575",
+    "feature_576",
+    "feature_577",
+    "feature_582",
+    "feature_583",
+    "feature_584",
+    "feature_585",
+    "feature_586",
+    "feature_587",
+    "feature_588",
+    "feature_589"
+  ],
+  "shap_shape": [
+    100,
+    450
+  ],
+  "explained_sample_ids": [
+    "secom-01b3bed261fc1223:0034",
+    "secom-01b3bed261fc1223:0047",
+    "secom-01b3bed261fc1223:0052",
+    "secom-01b3bed261fc1223:0053",
+    "secom-01b3bed261fc1223:0066",
+    "secom-01b3bed261fc1223:0086",
+    "secom-01b3bed261fc1223:0091",
+    "secom-01b3bed261fc1223:0177",
+    "secom-01b3bed261fc1223:0203",
+    "secom-01b3bed261fc1223:0225",
+    "secom-01b3bed261fc1223:0235",
+    "secom-01b3bed261fc1223:0242",
+    "secom-01b3bed261fc1223:0265",
+    "secom-01b3bed261fc1223:0284",
+    "secom-01b3bed261fc1223:0296",
+    "secom-01b3bed261fc1223:0298",
+    "secom-01b3bed261fc1223:0353",
+    "secom-01b3bed261fc1223:0380",
+    "secom-01b3bed261fc1223:0395",
+    "secom-01b3bed261fc1223:0455",
+    "secom-01b3bed261fc1223:0458",
+    "secom-01b3bed261fc1223:0459",
+    "secom-01b3bed261fc1223:0466",
+    "secom-01b3bed261fc1223:0496",
+    "secom-01b3bed261fc1223:0504",
+    "secom-01b3bed261fc1223:0509",
+    "secom-01b3bed261fc1223:0528",
+    "secom-01b3bed261fc1223:0545",
+    "secom-01b3bed261fc1223:0551",
+    "secom-01b3bed261fc1223:0562",
+    "secom-01b3bed261fc1223:0578",
+    "secom-01b3bed261fc1223:0588",
+    "secom-01b3bed261fc1223:0612",
+    "secom-01b3bed261fc1223:0613",
+    "secom-01b3bed261fc1223:0631",
+    "secom-01b3bed261fc1223:0653",
+    "secom-01b3bed261fc1223:0667",
+    "secom-01b3bed261fc1223:0668",
+    "secom-01b3bed261fc1223:0671",
+    "secom-01b3bed261fc1223:0678",
+    "secom-01b3bed261fc1223:0679",
+    "secom-01b3bed261fc1223:0707",
+    "secom-01b3bed261fc1223:0723",
+    "secom-01b3bed261fc1223:0752",
+    "secom-01b3bed261fc1223:0753",
+    "secom-01b3bed261fc1223:0767",
+    "secom-01b3bed261fc1223:0797",
+    "secom-01b3bed261fc1223:0802",
+    "secom-01b3bed261fc1223:0808",
+    "secom-01b3bed261fc1223:0835",
+    "secom-01b3bed261fc1223:0866",
+    "secom-01b3bed261fc1223:0869",
+    "secom-01b3bed261fc1223:0877",
+    "secom-01b3bed261fc1223:0922",
+    "secom-01b3bed261fc1223:0924",
+    "secom-01b3bed261fc1223:0937",
+    "secom-01b3bed261fc1223:0956",
+    "secom-01b3bed261fc1223:0968",
+    "secom-01b3bed261fc1223:0989",
+    "secom-01b3bed261fc1223:0996",
+    "secom-01b3bed261fc1223:0997",
+    "secom-01b3bed261fc1223:1012",
+    "secom-01b3bed261fc1223:1034",
+    "secom-01b3bed261fc1223:1037",
+    "secom-01b3bed261fc1223:1049",
+    "secom-01b3bed261fc1223:1057",
+    "secom-01b3bed261fc1223:1075",
+    "secom-01b3bed261fc1223:1087",
+    "secom-01b3bed261fc1223:1123",
+    "secom-01b3bed261fc1223:1130",
+    "secom-01b3bed261fc1223:1152",
+    "secom-01b3bed261fc1223:1173",
+    "secom-01b3bed261fc1223:1185",
+    "secom-01b3bed261fc1223:1205",
+    "secom-01b3bed261fc1223:1237",
+    "secom-01b3bed261fc1223:1250",
+    "secom-01b3bed261fc1223:1273",
+    "secom-01b3bed261fc1223:1283",
+    "secom-01b3bed261fc1223:1284",
+    "secom-01b3bed261fc1223:1296",
+    "secom-01b3bed261fc1223:1308",
+    "secom-01b3bed261fc1223:1320",
+    "secom-01b3bed261fc1223:1336",
+    "secom-01b3bed261fc1223:1352",
+    "secom-01b3bed261fc1223:1361",
+    "secom-01b3bed261fc1223:1369",
+    "secom-01b3bed261fc1223:1380",
+    "secom-01b3bed261fc1223:1399",
+    "secom-01b3bed261fc1223:1400",
+    "secom-01b3bed261fc1223:1408",
+    "secom-01b3bed261fc1223:1420",
+    "secom-01b3bed261fc1223:1440",
+    "secom-01b3bed261fc1223:1509",
+    "secom-01b3bed261fc1223:1510",
+    "secom-01b3bed261fc1223:1526",
+    "secom-01b3bed261fc1223:1529",
+    "secom-01b3bed261fc1223:1538",
+    "secom-01b3bed261fc1223:1541",
+    "secom-01b3bed261fc1223:1564",
+    "secom-01b3bed261fc1223:1565"
+  ],
+  "background_sample_ids": [
+    "secom-01b3bed261fc1223:0073",
+    "secom-01b3bed261fc1223:0099",
+    "secom-01b3bed261fc1223:0103",
+    "secom-01b3bed261fc1223:0124",
+    "secom-01b3bed261fc1223:0128",
+    "secom-01b3bed261fc1223:0135",
+    "secom-01b3bed261fc1223:0187",
+    "secom-01b3bed261fc1223:0248",
+    "secom-01b3bed261fc1223:0258",
+    "secom-01b3bed261fc1223:0279",
+    "secom-01b3bed261fc1223:0300",
+    "secom-01b3bed261fc1223:0303",
+    "secom-01b3bed261fc1223:0347",
+    "secom-01b3bed261fc1223:0411",
+    "secom-01b3bed261fc1223:0537",
+    "secom-01b3bed261fc1223:0544",
+    "secom-01b3bed261fc1223:0559",
+    "secom-01b3bed261fc1223:0575",
+    "secom-01b3bed261fc1223:0603",
+    "secom-01b3bed261fc1223:0627",
+    "secom-01b3bed261fc1223:0638",
+    "secom-01b3bed261fc1223:0658",
+    "secom-01b3bed261fc1223:0661",
+    "secom-01b3bed261fc1223:0669",
+    "secom-01b3bed261fc1223:0674",
+    "secom-01b3bed261fc1223:0712",
+    "secom-01b3bed261fc1223:0739",
+    "secom-01b3bed261fc1223:0759",
+    "secom-01b3bed261fc1223:0769",
+    "secom-01b3bed261fc1223:0774",
+    "secom-01b3bed261fc1223:0815",
+    "secom-01b3bed261fc1223:0836",
+    "secom-01b3bed261fc1223:0844",
+    "secom-01b3bed261fc1223:0964",
+    "secom-01b3bed261fc1223:0969",
+    "secom-01b3bed261fc1223:0971",
+    "secom-01b3bed261fc1223:1022",
+    "secom-01b3bed261fc1223:1044",
+    "secom-01b3bed261fc1223:1065",
+    "secom-01b3bed261fc1223:1069",
+    "secom-01b3bed261fc1223:1089",
+    "secom-01b3bed261fc1223:1128",
+    "secom-01b3bed261fc1223:1131",
+    "secom-01b3bed261fc1223:1160",
+    "secom-01b3bed261fc1223:1165",
+    "secom-01b3bed261fc1223:1170",
+    "secom-01b3bed261fc1223:1174",
+    "secom-01b3bed261fc1223:1195",
+    "secom-01b3bed261fc1223:1235",
+    "secom-01b3bed261fc1223:1252",
+    "secom-01b3bed261fc1223:1258",
+    "secom-01b3bed261fc1223:1259",
+    "secom-01b3bed261fc1223:1299",
+    "secom-01b3bed261fc1223:1343",
+    "secom-01b3bed261fc1223:1377",
+    "secom-01b3bed261fc1223:1394",
+    "secom-01b3bed261fc1223:1448",
+    "secom-01b3bed261fc1223:1452",
+    "secom-01b3bed261fc1223:1497",
+    "secom-01b3bed261fc1223:1517",
+    "secom-01b3bed261fc1223:1519",
+    "secom-01b3bed261fc1223:1549",
+    "secom-01b3bed261fc1223:1558",
+    "secom-01b3bed261fc1223:1559"
+  ],
+  "dependencies": {
+    "shap": "0.46.0",
+    "matplotlib": "3.9.4",
+    "numpy": "1.26.4",
+    "xgboost": "2.1.4",
+    "scikit-learn": "1.5.2",
+    "numba": "0.68.0",
+    "pandas": "2.3.3"
+  },
+  "importance_definition": "mean absolute SHAP over the fixed validation sample",
+  "feature_importance": [
+    {
+      "rank": 1,
+      "feature_id": "feature_103",
+      "mean_abs_shap": 0.2289304712973535
+    },
+    {
+      "rank": 2,
+      "feature_id": "feature_021",
+      "mean_abs_shap": 0.1939809437810618
+    },
+    {
+      "rank": 3,
+      "feature_id": "feature_033",
+      "mean_abs_shap": 0.18462302674306558
+    },
+    {
+      "rank": 4,
+      "feature_id": "feature_317",
+      "mean_abs_shap": 0.1641927371683414
+    },
+    {
+      "rank": 5,
+      "feature_id": "feature_129",
+      "mean_abs_shap": 0.157962422460987
+    },
+    {
+      "rank": 6,
+      "feature_id": "feature_200",
+      "mean_abs_shap": 0.13976091410266236
+    },
+    {
+      "rank": 7,
+      "feature_id": "feature_488",
+      "mean_abs_shap": 0.12811112534705899
+    },
+    {
+      "rank": 8,
+      "feature_id": "feature_344",
+      "mean_abs_shap": 0.11456555193130043
+    },
+    {
+      "rank": 9,
+      "feature_id": "feature_577",
+      "mean_abs_shap": 0.10297007028653753
+    },
+    {
+      "rank": 10,
+      "feature_id": "feature_031",
+      "mean_abs_shap": 0.0962148970074486
+    },
+    {
+      "rank": 11,
+      "feature_id": "feature_587",
+      "mean_abs_shap": 0.0916701371059753
+    },
+    {
+      "rank": 12,
+      "feature_id": "feature_213",
+      "mean_abs_shap": 0.08482603828044376
+    },
+    {
+      "rank": 13,
+      "feature_id": "feature_059",
+      "mean_abs_shap": 0.084682828294317
+    },
+    {
+      "rank": 14,
+      "feature_id": "feature_086",
+      "mean_abs_shap": 0.07689428972953465
+    },
+    {
+      "rank": 15,
+      "feature_id": "feature_281",
+      "mean_abs_shap": 0.07611597772454842
+    },
+    {
+      "rank": 16,
+      "feature_id": "feature_319",
+      "mean_abs_shap": 0.07046026804295252
+    },
+    {
+      "rank": 17,
+      "feature_id": "feature_519",
+      "mean_abs_shap": 0.06745594416803215
+    },
+    {
+      "rank": 18,
+      "feature_id": "feature_214",
+      "mean_abs_shap": 0.06162331260493374
+    },
+    {
+      "rank": 19,
+      "feature_id": "feature_075",
+      "mean_abs_shap": 0.05914793324889615
+    },
+    {
+      "rank": 20,
+      "feature_id": "feature_130",
+      "mean_abs_shap": 0.058673064808244815
+    },
+    {
+      "rank": 21,
+      "feature_id": "feature_247",
+      "mean_abs_shap": 0.05712842425709823
+    },
+    {
+      "rank": 22,
+      "feature_id": "feature_039",
+      "mean_abs_shap": 0.055628064797492695
+    },
+    {
+      "rank": 23,
+      "feature_id": "feature_446",
+      "mean_abs_shap": 0.052599686418834606
+    },
+    {
+      "rank": 24,
+      "feature_id": "feature_310",
+      "mean_abs_shap": 0.049426993897650394
+    },
+    {
+      "rank": 25,
+      "feature_id": "feature_469",
+      "mean_abs_shap": 0.049204834439588015
+    },
+    {
+      "rank": 26,
+      "feature_id": "feature_351",
+      "mean_abs_shap": 0.04697324259730522
+    },
+    {
+      "rank": 27,
+      "feature_id": "feature_562",
+      "mean_abs_shap": 0.04389883697556798
+    },
+    {
+      "rank": 28,
+      "feature_id": "feature_090",
+      "mean_abs_shap": 0.04255720664805267
+    },
+    {
+      "rank": 29,
+      "feature_id": "feature_477",
+      "mean_abs_shap": 0.04174399523923057
+    },
+    {
+      "rank": 30,
+      "feature_id": "feature_160",
+      "mean_abs_shap": 0.03984383316652384
+    },
+    {
+      "rank": 31,
+      "feature_id": "feature_423",
+      "mean_abs_shap": 0.03905463703267742
+    },
+    {
+      "rank": 32,
+      "feature_id": "feature_117",
+      "mean_abs_shap": 0.03687881420366466
+    },
+    {
+      "rank": 33,
+      "feature_id": "feature_270",
+      "mean_abs_shap": 0.036135925418930126
+    },
+    {
+      "rank": 34,
+      "feature_id": "feature_460",
+      "mean_abs_shap": 0.035581662681652235
+    },
+    {
+      "rank": 35,
+      "feature_id": "feature_316",
+      "mean_abs_shap": 0.03417319224419771
+    },
+    {
+      "rank": 36,
+      "feature_id": "feature_063",
+      "mean_abs_shap": 0.03405313410170493
+    },
+    {
+      "rank": 37,
+      "feature_id": "feature_124",
+      "mean_abs_shap": 0.03291701036330778
+    },
+    {
+      "rank": 38,
+      "feature_id": "feature_188",
+      "mean_abs_shap": 0.032807165792328306
+    },
+    {
+      "rank": 39,
+      "feature_id": "feature_079",
+      "mean_abs_shap": 0.032615516500663945
+    },
+    {
+      "rank": 40,
+      "feature_id": "feature_028",
+      "mean_abs_shap": 0.03251355450396659
+    },
+    {
+      "rank": 41,
+      "feature_id": "feature_333",
+      "mean_abs_shap": 0.032315363378147596
+    },
+    {
+      "rank": 42,
+      "feature_id": "feature_286",
+      "mean_abs_shap": 0.0318525676993886
+    },
+    {
+      "rank": 43,
+      "feature_id": "feature_181",
+      "mean_abs_shap": 0.030827542687766253
+    },
+    {
+      "rank": 44,
+      "feature_id": "feature_250",
+      "mean_abs_shap": 0.029577408870100044
+    },
+    {
+      "rank": 45,
+      "feature_id": "feature_345",
+      "mean_abs_shap": 0.02893906535289716
+    },
+    {
+      "rank": 46,
+      "feature_id": "feature_561",
+      "mean_abs_shap": 0.028274246685323304
+    },
+    {
+      "rank": 47,
+      "feature_id": "feature_405",
+      "mean_abs_shap": 0.027823705621267437
+    },
+    {
+      "rank": 48,
+      "feature_id": "feature_499",
+      "mean_abs_shap": 0.02676440406474285
+    },
+    {
+      "rank": 49,
+      "feature_id": "feature_421",
+      "mean_abs_shap": 0.026755449596385004
+    },
+    {
+      "rank": 50,
+      "feature_id": "feature_121",
+      "mean_abs_shap": 0.026682588192052208
+    },
+    {
+      "rank": 51,
+      "feature_id": "feature_495",
+      "mean_abs_shap": 0.026484103849506935
+    },
+    {
+      "rank": 52,
+      "feature_id": "feature_000",
+      "mean_abs_shap": 0.025348732684360584
+    },
+    {
+      "rank": 53,
+      "feature_id": "feature_051",
+      "mean_abs_shap": 0.0245473121618852
+    },
+    {
+      "rank": 54,
+      "feature_id": "feature_269",
+      "mean_abs_shap": 0.024294135455274955
+    },
+    {
+      "rank": 55,
+      "feature_id": "feature_091",
+      "mean_abs_shap": 0.023992180453496985
+    },
+    {
+      "rank": 56,
+      "feature_id": "feature_468",
+      "mean_abs_shap": 0.023887880583060905
+    },
+    {
+      "rank": 57,
+      "feature_id": "feature_348",
+      "mean_abs_shap": 0.02325206331865047
+    },
+    {
+      "rank": 58,
+      "feature_id": "feature_377",
+      "mean_abs_shap": 0.023237940740655175
+    },
+    {
+      "rank": 59,
+      "feature_id": "feature_081",
+      "mean_abs_shap": 0.02264522310346365
+    },
+    {
+      "rank": 60,
+      "feature_id": "feature_139",
+      "mean_abs_shap": 0.022565367074566894
+    },
+    {
+      "rank": 61,
+      "feature_id": "feature_295",
+      "mean_abs_shap": 0.02242622957099229
+    },
+    {
+      "rank": 62,
+      "feature_id": "feature_341",
+      "mean_abs_shap": 0.02232890390790999
+    },
+    {
+      "rank": 63,
+      "feature_id": "feature_227",
+      "mean_abs_shap": 0.02224620639695786
+    },
+    {
+      "rank": 64,
+      "feature_id": "feature_304",
+      "mean_abs_shap": 0.02218937406083569
+    },
+    {
+      "rank": 65,
+      "feature_id": "feature_541",
+      "mean_abs_shap": 0.02198862250894308
+    },
+    {
+      "rank": 66,
+      "feature_id": "feature_435",
+      "mean_abs_shap": 0.02166722010646481
+    },
+    {
+      "rank": 67,
+      "feature_id": "feature_385",
+      "mean_abs_shap": 0.02149751862685662
+    },
+    {
+      "rank": 68,
+      "feature_id": "feature_180",
+      "mean_abs_shap": 0.021188639756292104
+    },
+    {
+      "rank": 69,
+      "feature_id": "feature_035",
+      "mean_abs_shap": 0.01986872423789464
+    },
+    {
+      "rank": 70,
+      "feature_id": "feature_173",
+      "mean_abs_shap": 0.01971306768100476
+    },
+    {
+      "rank": 71,
+      "feature_id": "feature_443",
+      "mean_abs_shap": 0.01954243822954595
+    },
+    {
+      "rank": 72,
+      "feature_id": "feature_363",
+      "mean_abs_shap": 0.01912479872291442
+    },
+    {
+      "rank": 73,
+      "feature_id": "feature_253",
+      "mean_abs_shap": 0.018959683477296495
+    },
+    {
+      "rank": 74,
+      "feature_id": "feature_113",
+      "mean_abs_shap": 0.018938918001949787
+    },
+    {
+      "rank": 75,
+      "feature_id": "feature_361",
+      "mean_abs_shap": 0.01875141824653838
+    },
+    {
+      "rank": 76,
+      "feature_id": "feature_089",
+      "mean_abs_shap": 0.018639083881862462
+    },
+    {
+      "rank": 77,
+      "feature_id": "feature_336",
+      "mean_abs_shap": 0.017798257246613502
+    },
+    {
+      "rank": 78,
+      "feature_id": "feature_408",
+      "mean_abs_shap": 0.0175399665068835
+    },
+    {
+      "rank": 79,
+      "feature_id": "feature_573",
+      "mean_abs_shap": 0.01753634925466031
+    },
+    {
+      "rank": 80,
+      "feature_id": "feature_526",
+      "mean_abs_shap": 0.017183316780719906
+    },
+    {
+      "rank": 81,
+      "feature_id": "feature_146",
+      "mean_abs_shap": 0.01695515247702133
+    },
+    {
+      "rank": 82,
+      "feature_id": "feature_355",
+      "mean_abs_shap": 0.016911445316509344
+    },
+    {
+      "rank": 83,
+      "feature_id": "feature_116",
+      "mean_abs_shap": 0.016803643178427592
+    },
+    {
+      "rank": 84,
+      "feature_id": "feature_523",
+      "mean_abs_shap": 0.01650590667995857
+    },
+    {
+      "rank": 85,
+      "feature_id": "feature_287",
+      "mean_abs_shap": 0.01608998407609761
+    },
+    {
+      "rank": 86,
+      "feature_id": "feature_549",
+      "mean_abs_shap": 0.015832381376530976
+    },
+    {
+      "rank": 87,
+      "feature_id": "feature_045",
+      "mean_abs_shap": 0.0157939357298892
+    },
+    {
+      "rank": 88,
+      "feature_id": "feature_025",
+      "mean_abs_shap": 0.015292810103856027
+    },
+    {
+      "rank": 89,
+      "feature_id": "feature_008",
+      "mean_abs_shap": 0.015240617279778235
+    },
+    {
+      "rank": 90,
+      "feature_id": "feature_068",
+      "mean_abs_shap": 0.015118113041389734
+    },
+    {
+      "rank": 91,
+      "feature_id": "feature_087",
+      "mean_abs_shap": 0.015063374263700097
+    },
+    {
+      "rank": 92,
+      "feature_id": "feature_131",
+      "mean_abs_shap": 0.014753913201857358
+    },
+    {
+      "rank": 93,
+      "feature_id": "feature_175",
+      "mean_abs_shap": 0.014747732081450521
+    },
+    {
+      "rank": 94,
+      "feature_id": "feature_431",
+      "mean_abs_shap": 0.014616181533783674
+    },
+    {
+      "rank": 95,
+      "feature_id": "feature_560",
+      "mean_abs_shap": 0.014149755536927842
+    },
+    {
+      "rank": 96,
+      "feature_id": "feature_418",
+      "mean_abs_shap": 0.013939698467729612
+    },
+    {
+      "rank": 97,
+      "feature_id": "feature_454",
+      "mean_abs_shap": 0.0138569019746501
+    },
+    {
+      "rank": 98,
+      "feature_id": "feature_050",
+      "mean_abs_shap": 0.01376302665565163
+    },
+    {
+      "rank": 99,
+      "feature_id": "feature_168",
+      "mean_abs_shap": 0.013754211589694023
+    },
+    {
+      "rank": 100,
+      "feature_id": "feature_352",
+      "mean_abs_shap": 0.013120830345433205
+    },
+    {
+      "rank": 101,
+      "feature_id": "feature_285",
+      "mean_abs_shap": 0.012645059230271727
+    },
+    {
+      "rank": 102,
+      "feature_id": "feature_009",
+      "mean_abs_shap": 0.011763326358050108
+    },
+    {
+      "rank": 103,
+      "feature_id": "feature_479",
+      "mean_abs_shap": 0.011312166855786928
+    },
+    {
+      "rank": 104,
+      "feature_id": "feature_298",
+      "mean_abs_shap": 0.01109610753832385
+    },
+    {
+      "rank": 105,
+      "feature_id": "feature_585",
+      "mean_abs_shap": 0.010969956916524097
+    },
+    {
+      "rank": 106,
+      "feature_id": "feature_564",
+      "mean_abs_shap": 0.01093680439516902
+    },
+    {
+      "rank": 107,
+      "feature_id": "feature_002",
+      "mean_abs_shap": 0.010922732269100378
+    },
+    {
+      "rank": 108,
+      "feature_id": "feature_064",
+      "mean_abs_shap": 0.010630884537822566
+    },
+    {
+      "rank": 109,
+      "feature_id": "feature_407",
+      "mean_abs_shap": 0.010391234607668593
+    },
+    {
+      "rank": 110,
+      "feature_id": "feature_306",
+      "mean_abs_shap": 0.010181326619931496
+    },
+    {
+      "rank": 111,
+      "feature_id": "feature_524",
+      "mean_abs_shap": 0.00989485066384077
+    },
+    {
+      "rank": 112,
+      "feature_id": "feature_034",
+      "mean_abs_shap": 0.009855041233822703
+    },
+    {
+      "rank": 113,
+      "feature_id": "feature_217",
+      "mean_abs_shap": 0.009846525872126222
+    },
+    {
+      "rank": 114,
+      "feature_id": "feature_055",
+      "mean_abs_shap": 0.009779330723104067
+    },
+    {
+      "rank": 115,
+      "feature_id": "feature_417",
+      "mean_abs_shap": 0.009492909461259842
+    },
+    {
+      "rank": 116,
+      "feature_id": "feature_489",
+      "mean_abs_shap": 0.009472002368420362
+    },
+    {
+      "rank": 117,
+      "feature_id": "feature_048",
+      "mean_abs_shap": 0.00933796767378226
+    },
+    {
+      "rank": 118,
+      "feature_id": "feature_078",
+      "mean_abs_shap": 0.009327881896169857
+    },
+    {
+      "rank": 119,
+      "feature_id": "feature_455",
+      "mean_abs_shap": 0.009268662499962374
+    },
+    {
+      "rank": 120,
+      "feature_id": "feature_065",
+      "mean_abs_shap": 0.008881293460144662
+    },
+    {
+      "rank": 121,
+      "feature_id": "feature_216",
+      "mean_abs_shap": 0.0086576158227399
+    },
+    {
+      "rank": 122,
+      "feature_id": "feature_030",
+      "mean_abs_shap": 0.008193370113149285
+    },
+    {
+      "rank": 123,
+      "feature_id": "feature_566",
+      "mean_abs_shap": 0.007930832260753959
+    },
+    {
+      "rank": 124,
+      "feature_id": "feature_027",
+      "mean_abs_shap": 0.007899823295883835
+    },
+    {
+      "rank": 125,
+      "feature_id": "feature_135",
+      "mean_abs_shap": 0.007809326823335141
+    },
+    {
+      "rank": 126,
+      "feature_id": "feature_338",
+      "mean_abs_shap": 0.007584415734745562
+    },
+    {
+      "rank": 127,
+      "feature_id": "feature_185",
+      "mean_abs_shap": 0.007154493335401639
+    },
+    {
+      "rank": 128,
+      "feature_id": "feature_184",
+      "mean_abs_shap": 0.007120482572936453
+    },
+    {
+      "rank": 129,
+      "feature_id": "feature_150",
+      "mean_abs_shap": 0.006726407040841878
+    },
+    {
+      "rank": 130,
+      "feature_id": "feature_054",
+      "mean_abs_shap": 0.006308851325884462
+    },
+    {
+      "rank": 131,
+      "feature_id": "feature_440",
+      "mean_abs_shap": 0.00622031903360039
+    },
+    {
+      "rank": 132,
+      "feature_id": "feature_171",
+      "mean_abs_shap": 0.0062031738681253045
+    },
+    {
+      "rank": 133,
+      "feature_id": "feature_015",
+      "mean_abs_shap": 0.006000550595344976
+    },
+    {
+      "rank": 134,
+      "feature_id": "feature_022",
+      "mean_abs_shap": 0.005951886007096618
+    },
+    {
+      "rank": 135,
+      "feature_id": "feature_271",
+      "mean_abs_shap": 0.005445236111991107
+    },
+    {
+      "rank": 136,
+      "feature_id": "feature_307",
+      "mean_abs_shap": 0.005434869357850402
+    },
+    {
+      "rank": 137,
+      "feature_id": "feature_324",
+      "mean_abs_shap": 0.00504878944135271
+    },
+    {
+      "rank": 138,
+      "feature_id": "feature_067",
+      "mean_abs_shap": 0.004562148358672857
+    },
+    {
+      "rank": 139,
+      "feature_id": "feature_126",
+      "mean_abs_shap": 0.004187734029255807
+    },
+    {
+      "rank": 140,
+      "feature_id": "feature_569",
+      "mean_abs_shap": 0.003991001792019233
+    },
+    {
+      "rank": 141,
+      "feature_id": "feature_023",
+      "mean_abs_shap": 0.003942696086596698
+    },
+    {
+      "rank": 142,
+      "feature_id": "feature_433",
+      "mean_abs_shap": 0.0033367645740509035
+    },
+    {
+      "rank": 143,
+      "feature_id": "feature_222",
+      "mean_abs_shap": 0.0032288033340591936
+    },
+    {
+      "rank": 144,
+      "feature_id": "feature_099",
+      "mean_abs_shap": 0.0030094011267647147
+    },
+    {
+      "rank": 145,
+      "feature_id": "feature_303",
+      "mean_abs_shap": 0.0028946977481245995
+    },
+    {
+      "rank": 146,
+      "feature_id": "feature_019",
+      "mean_abs_shap": 0.002211110426578671
+    },
+    {
+      "rank": 147,
+      "feature_id": "feature_500",
+      "mean_abs_shap": 0.002125625191256404
+    },
+    {
+      "rank": 148,
+      "feature_id": "feature_277",
+      "mean_abs_shap": 0.0017372256238013506
+    },
+    {
+      "rank": 149,
+      "feature_id": "feature_410",
+      "mean_abs_shap": 0.0014857622503768654
+    },
+    {
+      "rank": 150,
+      "feature_id": "feature_412",
+      "mean_abs_shap": 0.0014821354899322613
+    },
+    {
+      "rank": 151,
+      "feature_id": "feature_161",
+      "mean_abs_shap": 0.0012536892900243402
+    },
+    {
+      "rank": 152,
+      "feature_id": "feature_038",
+      "mean_abs_shap": 0.001075777318328619
+    },
+    {
+      "rank": 153,
+      "feature_id": "feature_568",
+      "mean_abs_shap": 0.0009355951531324536
+    },
+    {
+      "rank": 154,
+      "feature_id": "feature_011",
+      "mean_abs_shap": 0.000731872939504683
+    },
+    {
+      "rank": 155,
+      "feature_id": "feature_058",
+      "mean_abs_shap": 0.0007236323039978743
+    },
+    {
+      "rank": 156,
+      "feature_id": "feature_212",
+      "mean_abs_shap": 0.0006795647571561859
+    },
+    {
+      "rank": 157,
+      "feature_id": "feature_148",
+      "mean_abs_shap": 0.0006023941049352288
+    },
+    {
+      "rank": 158,
+      "feature_id": "feature_376",
+      "mean_abs_shap": 0.00027977025602012875
+    },
+    {
+      "rank": 159,
+      "feature_id": "feature_001",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 160,
+      "feature_id": "feature_003",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 161,
+      "feature_id": "feature_004",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 162,
+      "feature_id": "feature_006",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 163,
+      "feature_id": "feature_007",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 164,
+      "feature_id": "feature_010",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 165,
+      "feature_id": "feature_012",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 166,
+      "feature_id": "feature_014",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 167,
+      "feature_id": "feature_016",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 168,
+      "feature_id": "feature_017",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 169,
+      "feature_id": "feature_018",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 170,
+      "feature_id": "feature_020",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 171,
+      "feature_id": "feature_024",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 172,
+      "feature_id": "feature_026",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 173,
+      "feature_id": "feature_029",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 174,
+      "feature_id": "feature_032",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 175,
+      "feature_id": "feature_036",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 176,
+      "feature_id": "feature_037",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 177,
+      "feature_id": "feature_040",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 178,
+      "feature_id": "feature_041",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 179,
+      "feature_id": "feature_043",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 180,
+      "feature_id": "feature_044",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 181,
+      "feature_id": "feature_046",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 182,
+      "feature_id": "feature_047",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 183,
+      "feature_id": "feature_053",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 184,
+      "feature_id": "feature_056",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 185,
+      "feature_id": "feature_057",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 186,
+      "feature_id": "feature_060",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 187,
+      "feature_id": "feature_061",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 188,
+      "feature_id": "feature_062",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 189,
+      "feature_id": "feature_066",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 190,
+      "feature_id": "feature_070",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 191,
+      "feature_id": "feature_071",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 192,
+      "feature_id": "feature_072",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 193,
+      "feature_id": "feature_073",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 194,
+      "feature_id": "feature_074",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 195,
+      "feature_id": "feature_076",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 196,
+      "feature_id": "feature_077",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 197,
+      "feature_id": "feature_080",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 198,
+      "feature_id": "feature_082",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 199,
+      "feature_id": "feature_083",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 200,
+      "feature_id": "feature_084",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 201,
+      "feature_id": "feature_088",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 202,
+      "feature_id": "feature_092",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 203,
+      "feature_id": "feature_093",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 204,
+      "feature_id": "feature_094",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 205,
+      "feature_id": "feature_095",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 206,
+      "feature_id": "feature_096",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 207,
+      "feature_id": "feature_098",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 208,
+      "feature_id": "feature_100",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 209,
+      "feature_id": "feature_101",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 210,
+      "feature_id": "feature_102",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 211,
+      "feature_id": "feature_104",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 212,
+      "feature_id": "feature_105",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 213,
+      "feature_id": "feature_106",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 214,
+      "feature_id": "feature_107",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 215,
+      "feature_id": "feature_108",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 216,
+      "feature_id": "feature_112",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 217,
+      "feature_id": "feature_114",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 218,
+      "feature_id": "feature_115",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 219,
+      "feature_id": "feature_118",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 220,
+      "feature_id": "feature_119",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 221,
+      "feature_id": "feature_120",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 222,
+      "feature_id": "feature_122",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 223,
+      "feature_id": "feature_123",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 224,
+      "feature_id": "feature_125",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 225,
+      "feature_id": "feature_127",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 226,
+      "feature_id": "feature_128",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 227,
+      "feature_id": "feature_132",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 228,
+      "feature_id": "feature_133",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 229,
+      "feature_id": "feature_134",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 230,
+      "feature_id": "feature_136",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 231,
+      "feature_id": "feature_137",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 232,
+      "feature_id": "feature_138",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 233,
+      "feature_id": "feature_140",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 234,
+      "feature_id": "feature_142",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 235,
+      "feature_id": "feature_143",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 236,
+      "feature_id": "feature_144",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 237,
+      "feature_id": "feature_145",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 238,
+      "feature_id": "feature_147",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 239,
+      "feature_id": "feature_151",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 240,
+      "feature_id": "feature_152",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 241,
+      "feature_id": "feature_153",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 242,
+      "feature_id": "feature_154",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 243,
+      "feature_id": "feature_155",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 244,
+      "feature_id": "feature_156",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 245,
+      "feature_id": "feature_159",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 246,
+      "feature_id": "feature_162",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 247,
+      "feature_id": "feature_163",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 248,
+      "feature_id": "feature_164",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 249,
+      "feature_id": "feature_165",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 250,
+      "feature_id": "feature_166",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 251,
+      "feature_id": "feature_167",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 252,
+      "feature_id": "feature_169",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 253,
+      "feature_id": "feature_170",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 254,
+      "feature_id": "feature_172",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 255,
+      "feature_id": "feature_174",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 256,
+      "feature_id": "feature_176",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 257,
+      "feature_id": "feature_177",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 258,
+      "feature_id": "feature_182",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 259,
+      "feature_id": "feature_183",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 260,
+      "feature_id": "feature_187",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 261,
+      "feature_id": "feature_195",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 262,
+      "feature_id": "feature_196",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 263,
+      "feature_id": "feature_197",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 264,
+      "feature_id": "feature_198",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 265,
+      "feature_id": "feature_199",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 266,
+      "feature_id": "feature_201",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 267,
+      "feature_id": "feature_202",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 268,
+      "feature_id": "feature_203",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 269,
+      "feature_id": "feature_204",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 270,
+      "feature_id": "feature_205",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 271,
+      "feature_id": "feature_206",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 272,
+      "feature_id": "feature_207",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 273,
+      "feature_id": "feature_208",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 274,
+      "feature_id": "feature_209",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 275,
+      "feature_id": "feature_210",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 276,
+      "feature_id": "feature_211",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 277,
+      "feature_id": "feature_215",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 278,
+      "feature_id": "feature_218",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 279,
+      "feature_id": "feature_219",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 280,
+      "feature_id": "feature_221",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 281,
+      "feature_id": "feature_223",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 282,
+      "feature_id": "feature_224",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 283,
+      "feature_id": "feature_225",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 284,
+      "feature_id": "feature_228",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 285,
+      "feature_id": "feature_238",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 286,
+      "feature_id": "feature_239",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 287,
+      "feature_id": "feature_248",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 288,
+      "feature_id": "feature_249",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 289,
+      "feature_id": "feature_251",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 290,
+      "feature_id": "feature_252",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 291,
+      "feature_id": "feature_254",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 292,
+      "feature_id": "feature_255",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 293,
+      "feature_id": "feature_267",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 294,
+      "feature_id": "feature_268",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 295,
+      "feature_id": "feature_272",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 296,
+      "feature_id": "feature_273",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 297,
+      "feature_id": "feature_274",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 298,
+      "feature_id": "feature_275",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 299,
+      "feature_id": "feature_278",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 300,
+      "feature_id": "feature_279",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 301,
+      "feature_id": "feature_280",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 302,
+      "feature_id": "feature_282",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 303,
+      "feature_id": "feature_283",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 304,
+      "feature_id": "feature_288",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 305,
+      "feature_id": "feature_289",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 306,
+      "feature_id": "feature_290",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 307,
+      "feature_id": "feature_291",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 308,
+      "feature_id": "feature_294",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 309,
+      "feature_id": "feature_296",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 310,
+      "feature_id": "feature_297",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 311,
+      "feature_id": "feature_299",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 312,
+      "feature_id": "feature_300",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 313,
+      "feature_id": "feature_301",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 314,
+      "feature_id": "feature_302",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 315,
+      "feature_id": "feature_305",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 316,
+      "feature_id": "feature_308",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 317,
+      "feature_id": "feature_309",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 318,
+      "feature_id": "feature_311",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 319,
+      "feature_id": "feature_312",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 320,
+      "feature_id": "feature_318",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 321,
+      "feature_id": "feature_320",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 322,
+      "feature_id": "feature_321",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 323,
+      "feature_id": "feature_323",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 324,
+      "feature_id": "feature_331",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 325,
+      "feature_id": "feature_332",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 326,
+      "feature_id": "feature_334",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 327,
+      "feature_id": "feature_335",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 328,
+      "feature_id": "feature_337",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 329,
+      "feature_id": "feature_339",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 330,
+      "feature_id": "feature_340",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 331,
+      "feature_id": "feature_342",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 332,
+      "feature_id": "feature_343",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 333,
+      "feature_id": "feature_346",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 334,
+      "feature_id": "feature_347",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 335,
+      "feature_id": "feature_349",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 336,
+      "feature_id": "feature_350",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 337,
+      "feature_id": "feature_353",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 338,
+      "feature_id": "feature_354",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 339,
+      "feature_id": "feature_356",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 340,
+      "feature_id": "feature_357",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 341,
+      "feature_id": "feature_359",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 342,
+      "feature_id": "feature_360",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 343,
+      "feature_id": "feature_362",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 344,
+      "feature_id": "feature_365",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 345,
+      "feature_id": "feature_366",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 346,
+      "feature_id": "feature_367",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 347,
+      "feature_id": "feature_368",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 348,
+      "feature_id": "feature_386",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 349,
+      "feature_id": "feature_387",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 350,
+      "feature_id": "feature_388",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 351,
+      "feature_id": "feature_389",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 352,
+      "feature_id": "feature_390",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 353,
+      "feature_id": "feature_391",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 354,
+      "feature_id": "feature_392",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 355,
+      "feature_id": "feature_393",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 356,
+      "feature_id": "feature_406",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 357,
+      "feature_id": "feature_409",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 358,
+      "feature_id": "feature_411",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 359,
+      "feature_id": "feature_413",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 360,
+      "feature_id": "feature_415",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 361,
+      "feature_id": "feature_416",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 362,
+      "feature_id": "feature_419",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 363,
+      "feature_id": "feature_420",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 364,
+      "feature_id": "feature_424",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 365,
+      "feature_id": "feature_425",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 366,
+      "feature_id": "feature_426",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 367,
+      "feature_id": "feature_427",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 368,
+      "feature_id": "feature_428",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 369,
+      "feature_id": "feature_429",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 370,
+      "feature_id": "feature_430",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 371,
+      "feature_id": "feature_432",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 372,
+      "feature_id": "feature_434",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 373,
+      "feature_id": "feature_436",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 374,
+      "feature_id": "feature_437",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 375,
+      "feature_id": "feature_438",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 376,
+      "feature_id": "feature_439",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 377,
+      "feature_id": "feature_441",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 378,
+      "feature_id": "feature_442",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 379,
+      "feature_id": "feature_444",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 380,
+      "feature_id": "feature_445",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 381,
+      "feature_id": "feature_447",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 382,
+      "feature_id": "feature_448",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 383,
+      "feature_id": "feature_452",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 384,
+      "feature_id": "feature_453",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 385,
+      "feature_id": "feature_456",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 386,
+      "feature_id": "feature_457",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 387,
+      "feature_id": "feature_459",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 388,
+      "feature_id": "feature_467",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 389,
+      "feature_id": "feature_470",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 390,
+      "feature_id": "feature_471",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 391,
+      "feature_id": "feature_472",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 392,
+      "feature_id": "feature_473",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 393,
+      "feature_id": "feature_474",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 394,
+      "feature_id": "feature_475",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 395,
+      "feature_id": "feature_476",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 396,
+      "feature_id": "feature_478",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 397,
+      "feature_id": "feature_480",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 398,
+      "feature_id": "feature_482",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 399,
+      "feature_id": "feature_483",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 400,
+      "feature_id": "feature_484",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 401,
+      "feature_id": "feature_485",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 402,
+      "feature_id": "feature_486",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 403,
+      "feature_id": "feature_487",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 404,
+      "feature_id": "feature_490",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 405,
+      "feature_id": "feature_491",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 406,
+      "feature_id": "feature_493",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 407,
+      "feature_id": "feature_494",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 408,
+      "feature_id": "feature_496",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 409,
+      "feature_id": "feature_497",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 410,
+      "feature_id": "feature_510",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 411,
+      "feature_id": "feature_511",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 412,
+      "feature_id": "feature_520",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 413,
+      "feature_id": "feature_521",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 414,
+      "feature_id": "feature_522",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 415,
+      "feature_id": "feature_525",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 416,
+      "feature_id": "feature_527",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 417,
+      "feature_id": "feature_539",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 418,
+      "feature_id": "feature_540",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 419,
+      "feature_id": "feature_542",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 420,
+      "feature_id": "feature_543",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 421,
+      "feature_id": "feature_544",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 422,
+      "feature_id": "feature_545",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 423,
+      "feature_id": "feature_546",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 424,
+      "feature_id": "feature_547",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 425,
+      "feature_id": "feature_548",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 426,
+      "feature_id": "feature_550",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 427,
+      "feature_id": "feature_551",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 428,
+      "feature_id": "feature_552",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 429,
+      "feature_id": "feature_553",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 430,
+      "feature_id": "feature_554",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 431,
+      "feature_id": "feature_555",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 432,
+      "feature_id": "feature_556",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 433,
+      "feature_id": "feature_557",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 434,
+      "feature_id": "feature_558",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 435,
+      "feature_id": "feature_559",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 436,
+      "feature_id": "feature_563",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 437,
+      "feature_id": "feature_565",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 438,
+      "feature_id": "feature_567",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 439,
+      "feature_id": "feature_570",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 440,
+      "feature_id": "feature_571",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 441,
+      "feature_id": "feature_572",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 442,
+      "feature_id": "feature_574",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 443,
+      "feature_id": "feature_575",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 444,
+      "feature_id": "feature_576",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 445,
+      "feature_id": "feature_582",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 446,
+      "feature_id": "feature_583",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 447,
+      "feature_id": "feature_584",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 448,
+      "feature_id": "feature_586",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 449,
+      "feature_id": "feature_588",
+      "mean_abs_shap": 0.0
+    },
+    {
+      "rank": 450,
+      "feature_id": "feature_589",
+      "mean_abs_shap": 0.0
+    }
+  ],
+  "top_20_features": [
+    {
+      "rank": 1,
+      "feature_id": "feature_103",
+      "mean_abs_shap": 0.2289304712973535
+    },
+    {
+      "rank": 2,
+      "feature_id": "feature_021",
+      "mean_abs_shap": 0.1939809437810618
+    },
+    {
+      "rank": 3,
+      "feature_id": "feature_033",
+      "mean_abs_shap": 0.18462302674306558
+    },
+    {
+      "rank": 4,
+      "feature_id": "feature_317",
+      "mean_abs_shap": 0.1641927371683414
+    },
+    {
+      "rank": 5,
+      "feature_id": "feature_129",
+      "mean_abs_shap": 0.157962422460987
+    },
+    {
+      "rank": 6,
+      "feature_id": "feature_200",
+      "mean_abs_shap": 0.13976091410266236
+    },
+    {
+      "rank": 7,
+      "feature_id": "feature_488",
+      "mean_abs_shap": 0.12811112534705899
+    },
+    {
+      "rank": 8,
+      "feature_id": "feature_344",
+      "mean_abs_shap": 0.11456555193130043
+    },
+    {
+      "rank": 9,
+      "feature_id": "feature_577",
+      "mean_abs_shap": 0.10297007028653753
+    },
+    {
+      "rank": 10,
+      "feature_id": "feature_031",
+      "mean_abs_shap": 0.0962148970074486
+    },
+    {
+      "rank": 11,
+      "feature_id": "feature_587",
+      "mean_abs_shap": 0.0916701371059753
+    },
+    {
+      "rank": 12,
+      "feature_id": "feature_213",
+      "mean_abs_shap": 0.08482603828044376
+    },
+    {
+      "rank": 13,
+      "feature_id": "feature_059",
+      "mean_abs_shap": 0.084682828294317
+    },
+    {
+      "rank": 14,
+      "feature_id": "feature_086",
+      "mean_abs_shap": 0.07689428972953465
+    },
+    {
+      "rank": 15,
+      "feature_id": "feature_281",
+      "mean_abs_shap": 0.07611597772454842
+    },
+    {
+      "rank": 16,
+      "feature_id": "feature_319",
+      "mean_abs_shap": 0.07046026804295252
+    },
+    {
+      "rank": 17,
+      "feature_id": "feature_519",
+      "mean_abs_shap": 0.06745594416803215
+    },
+    {
+      "rank": 18,
+      "feature_id": "feature_214",
+      "mean_abs_shap": 0.06162331260493374
+    },
+    {
+      "rank": 19,
+      "feature_id": "feature_075",
+      "mean_abs_shap": 0.05914793324889615
+    },
+    {
+      "rank": 20,
+      "feature_id": "feature_130",
+      "mean_abs_shap": 0.058673064808244815
+    }
+  ],
+  "maximum_additivity_error": 1.2036016414640471e-06,
+  "test_statement": "TEST was not transformed, predicted, explained, or evaluated. Snapshot identity and saved membership were validated only."
+}

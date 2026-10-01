@@ -9,3 +9,4 @@ application_default_credentials.json
 data/raw/
 data/normalized/
 artifacts/
+.cache/matplotlib/
