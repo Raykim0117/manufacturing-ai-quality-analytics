@@ -4,6 +4,7 @@ import re
 from datetime import datetime, timedelta
 import hashlib
 import math
+from threading import Lock
 from pathlib import Path
 from string import Template
 
@@ -11,6 +12,35 @@ from google.api_core.exceptions import Conflict, NotFound
 from google.cloud import bigquery
 
 from .config import BigQueryConfig
+
+
+class OnlinePredictionStore:
+    """Append API rows to an existing table; discover credentials only on write."""
+
+    def __init__(self, config: BigQueryConfig) -> None:
+        if config.predictions_table_id == config.table_id:
+            raise ValueError("Prediction destination must not be the raw table")
+        self.config = config
+        self.client = None
+        self._lock = Lock()
+
+    def write(self, row: dict) -> None:
+        if set(row) != {field.name for field in prediction_schema()}:
+            raise ValueError("Online prediction fields must match quality_predictions")
+        if row["source"] != "api" or row["split"] is not None or row["actual_failure"] is not None:
+            raise ValueError("Online rows require source=api and no split or actual label")
+        with self._lock:
+            if self.client is None:
+                self.client = bigquery.Client(project=self.config.project_id)
+        errors = self.client.insert_rows_json(
+            self.config.predictions_table_id, [row], row_ids=[row["prediction_id"]], timeout=10,
+        )
+        if errors:
+            raise RuntimeError("BigQuery rejected the online prediction")
+
+    def close(self) -> None:
+        if self.client is not None:
+            self.client.close()
 
 
 def read_raw_table(

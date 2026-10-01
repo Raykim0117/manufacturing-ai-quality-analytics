@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass
 import os
+from pathlib import Path
 import re
 
 
@@ -47,3 +48,25 @@ class BigQueryConfig:
     @property
     def summary_view_id(self) -> str:
         return f"{self.dataset_id}.quality_summary"
+
+
+@dataclass(frozen=True)
+class InferenceConfig:
+    model_path: Path
+    persist_predictions: bool = False
+
+    @classmethod
+    def from_env(cls) -> "InferenceConfig":
+        persistence = os.environ.get("PERSIST_PREDICTIONS", "false").strip().lower()
+        if persistence not in ("true", "false"):
+            raise ValueError("PERSIST_PREDICTIONS must be true or false")
+        configured_path = os.environ.get("MODEL_PATH", "").strip()
+        if configured_path:
+            model_path = Path(configured_path)
+        else:
+            root = Path(__file__).resolve().parents[2]
+            candidates = list((root / "artifacts").glob("*/selected-model-v1/selected.pkl"))
+            if len(candidates) != 1:
+                raise ValueError("Set MODEL_PATH to the trusted frozen selected-model bundle")
+            model_path = candidates[0]
+        return cls(model_path, persistence == "true")
