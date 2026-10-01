@@ -1,8 +1,31 @@
-"""Only the BigQuery operations required to load the SECOM raw snapshot."""
+"""Small BigQuery helpers for raw ingestion and read-only training queries."""
+
+import re
 
 from google.cloud import bigquery
 
 from .config import BigQueryConfig
+
+
+def read_raw_table(
+    client: bigquery.Client,
+    config: BigQueryConfig,
+    feature_count: int = 590,
+) -> list[dict]:
+    """Read an ordered snapshot without creating or changing any table."""
+    if feature_count <= 0:
+        raise ValueError("Feature count must be positive")
+    # Revalidate even when the caller constructed the configuration directly.
+    if not re.fullmatch(r"[a-z][a-z0-9-]{4,28}[a-z0-9]", config.project_id):
+        raise ValueError("Invalid project ID")
+    if any(not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]{0,1023}", value)
+           for value in (config.dataset, config.raw_table)):
+        raise ValueError("Invalid BigQuery identifier")
+    fields = ", ".join(field.name for field in raw_schema(feature_count))
+    query = f"SELECT {fields} FROM `{config.table_id}` ORDER BY sample_id"
+    job_config = bigquery.QueryJobConfig(maximum_bytes_billed=100_000_000)
+    job = client.query(query, job_config=job_config, location=config.location)
+    return [dict(row) for row in job.result()]
 
 
 def raw_schema(feature_count: int) -> list[bigquery.SchemaField]:

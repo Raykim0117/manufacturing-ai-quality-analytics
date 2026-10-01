@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from google.cloud import bigquery
 from quality_analytics.config import BigQueryConfig
-from quality_analytics.warehouse import load_raw_table, raw_schema
+from quality_analytics.warehouse import load_raw_table, raw_schema, read_raw_table
 
 
 class ConfigurationTests(unittest.TestCase):
@@ -105,6 +105,24 @@ class WarehouseTests(unittest.TestCase):
         self.job.output_rows = 0
         with self.assertRaisesRegex(RuntimeError, "expected 1"):
             load_raw_table(self.client, self.config, self.rows, 590)
+
+    def test_training_read_is_ordered_bounded_and_does_not_write(self):
+        self.client.query.return_value.result.return_value = self.rows
+        self.assertEqual(read_raw_table(self.client, self.config), self.rows)
+        call = self.client.query.call_args
+        self.assertTrue(call.args[0].startswith("SELECT dataset_version, sample_id, test_time, failure_label"))
+        self.assertIn("feature_589 FROM `example-project.example_data.example_raw` ORDER BY sample_id",
+                      call.args[0])
+        self.assertEqual(call.kwargs["job_config"].maximum_bytes_billed, 100_000_000)
+        self.assertEqual(call.kwargs["location"], "US")
+        self.client.create_dataset.assert_not_called()
+        self.client.load_table_from_json.assert_not_called()
+
+    def test_training_read_rejects_unsafe_identifiers(self):
+        config = BigQueryConfig("example-project", "dataset`; DROP TABLE x", "US", "raw")
+        with self.assertRaises(ValueError):
+            read_raw_table(self.client, config)
+        self.client.query.assert_not_called()
 
 
 if __name__ == "__main__":

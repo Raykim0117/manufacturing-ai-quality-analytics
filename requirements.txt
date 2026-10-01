@@ -1,2 +1,4 @@
-# Source parsing and tests use the standard library; only warehouse access needs a package.
+# Raw parsing uses the standard library; baseline training runs locally on CPU.
 google-cloud-bigquery==3.45.2
+numpy==1.26.4
+scikit-learn==1.5.2

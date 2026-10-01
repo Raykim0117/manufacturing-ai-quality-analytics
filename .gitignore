@@ -7,3 +7,5 @@ __pycache__/
 application_default_credentials.json
 *service-account*.json
 data/raw/
+data/normalized/
+artifacts/
