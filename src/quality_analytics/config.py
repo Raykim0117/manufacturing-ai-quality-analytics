@@ -1,4 +1,4 @@
-"""Environment-only configuration for the BigQuery ingestion stage."""
+"""Environment-only configuration for raw and prediction BigQuery resources."""
 
 from dataclasses import dataclass
 import os
@@ -11,6 +11,7 @@ class BigQueryConfig:
     dataset: str
     location: str
     raw_table: str
+    predictions_table: str = "quality_predictions"
 
     @classmethod
     def from_env(cls) -> "BigQueryConfig":
@@ -21,12 +22,15 @@ class BigQueryConfig:
             raise ValueError(f"Missing environment variables: {', '.join(missing)}")
         if not re.fullmatch(r"[a-z][a-z0-9-]{4,28}[a-z0-9]", values["GCP_PROJECT_ID"]):
             raise ValueError("GCP_PROJECT_ID must be a valid Google Cloud project ID")
-        for name in ("BQ_DATASET", "BQ_RAW_TABLE"):
+        values["BQ_PREDICTIONS_TABLE"] = os.environ.get(
+            "BQ_PREDICTIONS_TABLE", "quality_predictions"
+        ).strip()
+        for name in ("BQ_DATASET", "BQ_RAW_TABLE", "BQ_PREDICTIONS_TABLE"):
             if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]{0,1023}", values[name]):
                 raise ValueError(f"{name} must be a simple BigQuery identifier")
         if not re.fullmatch(r"[A-Za-z0-9-]+", values["BQ_LOCATION"]):
             raise ValueError("BQ_LOCATION must be a BigQuery region or multi-region")
-        return cls(*(values[name] for name in names))
+        return cls(*(values[name] for name in names), predictions_table=values["BQ_PREDICTIONS_TABLE"])
 
     @property
     def dataset_id(self) -> str:
@@ -35,3 +39,11 @@ class BigQueryConfig:
     @property
     def table_id(self) -> str:
         return f"{self.dataset_id}.{self.raw_table}"
+
+    @property
+    def predictions_table_id(self) -> str:
+        return f"{self.dataset_id}.{self.predictions_table}"
+
+    @property
+    def summary_view_id(self) -> str:
+        return f"{self.dataset_id}.quality_summary"
