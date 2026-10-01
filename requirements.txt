@@ -1,0 +1,2 @@
+# Source parsing and tests use the standard library; only warehouse access needs a package.
+google-cloud-bigquery==3.45.2

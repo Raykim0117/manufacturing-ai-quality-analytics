@@ -1,0 +1,74 @@
+{
+  "validated_at_utc": "2026-10-01T12:03:18.056787+00:00",
+  "validation_passed": true,
+  "checks": {
+    "required_files_present": true,
+    "row_counts_match": true,
+    "consistent_feature_width": true,
+    "labels_valid": true,
+    "all_timestamps_parseable": true,
+    "no_infinite_measurements": true,
+    "raw_files_unchanged": true
+  },
+  "source_files": {
+    "secom.data": {
+      "exists": true,
+      "size_bytes": 5389983,
+      "sha256_before": "20f0e7ee434f7dcbae0eea9ffff009a2b57f42d6b0dc9a5bd4f00782c0a3374c",
+      "sha256_after": "20f0e7ee434f7dcbae0eea9ffff009a2b57f42d6b0dc9a5bd4f00782c0a3374c"
+    },
+    "secom_labels.data": {
+      "exists": true,
+      "size_bytes": 40638,
+      "sha256_before": "126884cf453705c9e61a903fe906f0665a3b45ce3639e621edc5c93c89627e03",
+      "sha256_after": "126884cf453705c9e61a903fe906f0665a3b45ce3639e621edc5c93c89627e03"
+    },
+    "secom.names": {
+      "exists": true,
+      "size_bytes": 4223,
+      "sha256_before": "6d91b0b46cdee03064ee3e3112f937c1b3f7fcd9933575794ec07974e6f1ea59",
+      "sha256_after": "6d91b0b46cdee03064ee3e3112f937c1b3f7fcd9933575794ec07974e6f1ea59"
+    }
+  },
+  "sample_count": 1567,
+  "label_row_count": 1567,
+  "feature_count": 590,
+  "metadata_declared_attribute_count": 591,
+  "missing_value_count": 41951,
+  "missing_value_percentage": 4.537548808583821,
+  "infinite_value_count": 0,
+  "label_distribution": {
+    "-1": {
+      "meaning": "PASS",
+      "count": 1463
+    },
+    "1": {
+      "meaning": "FAIL",
+      "count": 104
+    }
+  },
+  "label_mapping": {
+    "-1": "PASS",
+    "1": "FAIL"
+  },
+  "label_mapping_source": "https://archive.ics.uci.edu/dataset/179/secom",
+  "timestamps": {
+    "format": "%d/%m/%Y %H:%M:%S",
+    "parseable_count": 1567,
+    "unparseable_count": 0,
+    "invalid_examples": [],
+    "first_original": "19/07/2008 11:55:00",
+    "last_original": "17/10/2008 06:07:00",
+    "minimum": "2008-07-19T11:55:00",
+    "maximum": "2008-10-17T06:07:00",
+    "timezone": "Unspecified in source; no timezone assigned"
+  },
+  "warnings": [
+    "secom.names declares 591 attributes; secom.data contains 590 numeric columns. Use the measured width; do not add a feature to match the metadata.",
+    "secom.names renders the PASS label as '.1'; the official UCI page confirms -1=PASS and 1=FAIL. Raw documentation was not corrected."
+  ],
+  "limitations": [
+    "Rows are paired by original position; matching counts cannot prove semantic alignment.",
+    "Validation only: no values imputed, labels remapped, or features transformed."
+  ]
+}
