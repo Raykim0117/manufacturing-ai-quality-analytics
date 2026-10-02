@@ -93,6 +93,8 @@ The dashboard also displays the top 10 samples ranked by failure risk score.
 
 ![Connected Sheets dashboard](docs/images/connected_sheets_dashboard.png)
 
+[View the Connected Sheets Dashboard](https://docs.google.com/spreadsheets/d/1p8Epe_dlW-Th9IvbMnsubrVTW5hQC4zBHvqoj18InMI/edit?usp=sharing)
+
 ## Inference API
 
 The frozen model loads once at startup; requests perform inference using saved preprocessing and threshold.
