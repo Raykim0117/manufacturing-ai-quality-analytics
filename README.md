@@ -1,6 +1,6 @@
 # Manufacturing AI Quality Analytics
 
-An end-to-end manufacturing quality failure screening PoC using the [UCI SECOM dataset](https://archive.ics.uci.edu/dataset/179/secom) (CC BY 4.0). The project connects validated semiconductor process measurements, model comparison, offline explanations, BigQuery reporting, and containerized inference. The verified dataset contains 1,567 samples, 590 anonymized features, and 104 failures. Failure is the positive class (`FAIL=1`, `PASS=0`). Verified implementation reaches local Docker inference and BigQuery batch reporting; cloud deployment and Connected Sheets remain planned.
+An end-to-end manufacturing quality failure screening PoC using the [UCI SECOM dataset](https://archive.ics.uci.edu/dataset/179/secom) (CC BY 4.0). The project connects validated semiconductor process measurements, model comparison, offline explanations, BigQuery reporting, and containerized inference. The verified dataset contains 1,567 samples, 590 anonymized features, and 104 failures. Failure is the positive class (`FAIL=1`, `PASS=0`). The verified implementation includes BigQuery batch reporting, FastAPI, Docker, Google Artifact Registry, Cloud Run, and Connected Sheets, within a portfolio PoC scope.
 
 ## Architecture
 
@@ -25,11 +25,11 @@ flowchart TD
     bundle --> api[FastAPI]
     api --> docker[Docker]
     api -->|Optional persistence| predictions
-    docker -.-> registry[Artifact Registry: planned]
-    registry -.-> run[Cloud Run: planned]
+    docker --> registry[Artifact Registry]
+    registry --> run[Cloud Run]
     run -.->|Planned online persistence| predictions
-    summary -.-> sheets[Connected Sheets: planned]
-    predictions -.-> sheets
+    summary --> sheets[Connected Sheets]
+    predictions --> sheets
 ```
 
 ## Key results
@@ -74,11 +74,24 @@ BigQuery resources use the `secom_quality` dataset:
 | `quality_predictions` | 314 labeled TEST predictions were written and individually verified, with run/model/dataset identity, score, threshold, and actual failure. Optional API rows use null labels and split. |
 | `quality_summary` | Verified logical view pinned to one explicit TEST batch run; exposes sample count, observed failures, flagged count, mean score, recall, and precision. Excludes API traffic. |
 
-Observed failure fields use actual labels. Predicted risk scores and flagged counts are not measured manufacturing yield. Connected Sheets is the planned business-user interface to these reporting resources.
+Observed failure fields use actual labels. Predicted risk scores and flagged counts are not measured manufacturing yield. Connected Sheets is the implemented business-facing reporting layer over `quality_summary` and `quality_predictions`.
 
 ## Connected Sheets dashboard
 
-The planned dashboard would let business users review KPIs and prioritize high-risk samples without writing SQL. Connected Sheets connection, refresh, and dashboard verification are not recorded in this repository. No dashboard screenshot is available.
+`secom_quality.quality_summary` and `secom_quality.quality_predictions` are connected to Google Sheets through Connected Sheets. `KPI_Summary` and `Prediction_Details` provide extracted reporting views; `Dashboard` presents final TEST KPIs and risk-prioritized samples for business users to inspect without writing SQL.
+
+| Dashboard KPI | Verified value |
+| --- | ---: |
+| TEST samples | 314 |
+| Actual FAIL | 21 |
+| Detected FAIL | 20 |
+| Missed FAIL | 1 |
+| Recall | 95.24% |
+| Precision | 7.63% |
+
+The dashboard also displays the top 10 samples ranked by failure risk score.
+
+![Connected Sheets dashboard](docs/images/connected_sheets_dashboard.png)
 
 ## Inference API
 
@@ -94,9 +107,9 @@ Features follow `feature_000` through `feature_589`; nulls use saved training me
 
 ## Deployment
 
-Target path: **FastAPI → Docker → Artifact Registry → Cloud Run**. FastAPI and local Docker are verified; Artifact Registry publication and Cloud Run deployment have no verification evidence in the inspected repository.
+Verified deployment path: **FastAPI → Docker → Google Artifact Registry → Cloud Run**. The local `quality-api:local` image was tagged and successfully pushed to `asia-northeast3-docker.pkg.dev/mfg-ai-quality-2026/manufacturing-ai/quality-api:v1`. Cloud Run service `manufacturing-quality-api` was deployed in project `mfg-ai-quality-2026`, region `asia-northeast3`; the deployed revision served 100% of traffic.
 
-Local FastAPI and the Docker container returned matching results for the same synthetic all-null 590-feature request: `failure_score=0.46548160910606384`, `predicted_failure=true`, frozen threshold `0.08485201001167297`, and `stored=false`. Prediction UUIDs vary per call. Cloud Run prediction parity remains unverified.
+Local FastAPI, the local Docker container, and deployed Cloud Run returned matching model outputs for the same synthetic all-null 590-feature request: `failure_score=0.46548160910606384`, `predicted_failure=true`, frozen threshold `0.08485201001167297`, and `model_version=selected-model-v1`. Prediction UUIDs may differ per request. Cloud Run used `PERSIST_PREDICTIONS=false` and returned `stored=false`; online BigQuery prediction persistence was not verified.
 
 The image runs as UID/GID `10001`, loads the packaged frozen bundle, and listens on port 8080. Final local image size: **2,559,336,032 bytes** (about 2.56 GB).
 
@@ -117,7 +130,8 @@ Stop and remove this demo container with `docker stop quality-api-local` and `do
 - **70 Python tests passed during final local Docker verification**, with zero failures or errors.
 - Frozen model SHA-256 matched on host and in container: `66e00f2be70812c15c3d94dba81ce62116f8df3089d548dd4f5fa01a64559d8c`.
 - Docker reported `healthy`; health, model-info, and prediction HTTP checks returned `200`, with exact host/container prediction and model-info parity.
-- BigQuery batch rows and summary values were verified against cached TEST predictions. Cloud Run health and prediction endpoints remain unverified.
+- BigQuery batch rows and summary values were verified against cached TEST predictions.
+- Cloud Run `GET /health`, `GET /model-info`, and `POST /predict` were manually verified successfully. Health returned `status=ok` and `model_version=selected-model-v1`; model-info confirmed 590 raw features, manufacturing failure (FAIL) as the positive class, and the frozen threshold. The synthetic prediction matched local FastAPI and Docker in failure score, threshold, classification, and model version, with `stored=false`.
 
 ```powershell
 & .\.venv\Scripts\python.exe -m pip install -r requirements.txt
@@ -139,7 +153,7 @@ The full suite requires existing local raw/normalized data and development artif
 
 ## Tech stack
 
-Implemented: Python 3.10, BigQuery, scikit-learn, XGBoost, SHAP, FastAPI, and Docker. Planned deployment/reporting: Google Artifact Registry, Cloud Run, and Connected Sheets. Python dependencies are recorded in [requirements.txt](requirements.txt).
+Implemented: Python 3.10, BigQuery, scikit-learn, XGBoost, SHAP, FastAPI, Docker, Google Artifact Registry, Cloud Run, and Connected Sheets. Python dependencies are recorded in [requirements.txt](requirements.txt).
 
 ## Limitations
 
